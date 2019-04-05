@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.image.MainActivity">
+
+    <Button
+        android:id="@+id/bCapture"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@android:color/holo_red_light"
+        android:onClick="launchCamera"
+        android:text="Click to capture"
+        app:layout_constraintBottom_toTopOf="@+id/buttonBright"
+        app:layout_constraintEnd_toStartOf="@+id/buttonUndoAll"
+        app:layout_constraintStart_toEndOf="@+id/buttonRedoALL"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@android:color/background_dark"
+        android:minHeight="200dp"
+        android:minWidth="200dp"
+        app:layout_constraintBottom_toTopOf="@+id/buttonRedoALL"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@android:color/background_light" />
+
+    <Button
+        android:id="@+id/bInvert"
+        android:layout_width="0dp"
+        android:layout_height="45dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginStart="5dp"
+        android:onClick="onInvertClicked"
+        android:text="Invert"
+        android:textColor="@android:color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/buttonBright"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonRedoALL" />
+
+    <Button
+        android:id="@+id/buttonBright"
+        android:layout_width="0dp"
+        android:layout_height="45dp"
+        android:layout_marginBottom="8dp"
+        android:onClick="onBrightClicked"
+        android:text="Bright"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/buttonFlip"
+        app:layout_constraintStart_toEndOf="@+id/bInvert"
+        app:layout_constraintTop_toBottomOf="@+id/bCapture" />
+
+    <Button
+        android:id="@+id/buttonFlip"
+        android:layout_width="0dp"
+        android:layout_height="45dp"
+        android:layout_marginBottom="8dp"
+        android:onClick="onFlipClicked"
+        android:text="Flip"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/buttonGrey"
+        app:layout_constraintStart_toEndOf="@+id/buttonBright"
+        app:layout_constraintTop_toBottomOf="@+id/bCapture" />
+
+    <Button
+        android:id="@+id/buttonGrey"
+        android:layout_width="wrap_content"
+        android:layout_height="45dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginRight="5dp"
+        android:onClick="onGreyClicked"
+        android:text="GreyScale"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/buttonFlip"
+        app:layout_constraintTop_toBottomOf="@+id/buttonUndoAll" />
+
+    <Button
+        android:id="@+id/buttonRedoALL"
+        android:layout_width="wrap_content"
+        android:layout_height="45dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginStart="5dp"
+        android:onClick="onRedoAllClicked"
+        android:text="Redo All"
+        app:layout_constraintBottom_toTopOf="@+id/bInvert"
+        app:layout_constraintEnd_toStartOf="@+id/bCapture"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+    <Button
+        android:id="@+id/buttonUndoAll"
+        android:layout_width="wrap_content"
+        android:layout_height="45dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginRight="5dp"
+        android:onClick="onUndoAllClicked"
+        android:text="UndoALL"
+        app:layout_constraintBottom_toTopOf="@+id/buttonGrey"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/bCapture"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Share To"
+        android:onClick="onShareTo"
+        tools:layout_editor_absoluteX="60dp"
+        tools:layout_editor_absoluteY="185dp" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:onClick="saveImage"
+        android:text="Save"
+        app:layout_constraintBottom_toTopOf="@+id/buttonRedoALL"
+        app:layout_constraintTop_toTopOf="@+id/imageView"
+        app:layout_constraintVertical_bias="1.0"
+        tools:layout_editor_absoluteX="16dp" />
+</android.support.constraint.ConstraintLayout>
